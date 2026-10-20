@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy &amp; Security · Shiftvert</title>
+<meta name="description" content="Shiftvert converts files entirely on your Mac: no network code, no uploads, no accounts, no Accessibility or Full Disk Access. This website doesn't track you either.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shiftvert">
+<meta property="og:title" content="Shiftvert: Privacy &amp; Security">
+<meta property="og:description" content="Your files never leave your Mac. No uploads, no accounts, no tracking.">
+<meta property="og:image" content="https://shiftvert.com/demo-poster.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="The Shiftvert wheel of formats around a photo being dragged on a Mac">
+<meta property="og:url" content="https://shiftvert.com/privacy.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://shiftvert.com/privacy.html">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<script src="theme.js"></script>
+<style>
+  /* ---------- Tokens: day (light) wallpaper and windows ---------- */
+  :root {
+    color-scheme: light;
+    --f-display: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
+    --f-text: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
+    --f-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
+    --gutter: clamp(16px, 5vw, 72px);
+    --iris: #4a57f0; --orchid: #9b3fe0; --sel: #0b67d8; --focus: #2f7bff;
+
+    --sky-0: #93a5ff; --sky-1: #bdb5ff; --sky-2: #f1c9e8; --sky-3: #ffd9c6;
+    --glow: #fff1df; --sun-0: #fffaf1; --sun-1: #ffd6b8;
+    --d1a: #dcd0ff; --d1b: #c6b5fb; --d2a: #c4b0fa; --d2b: #ab92f2;
+    --d3a: #a88ff1; --d3b: #8f72e6; --d4a: #7e5fdc; --d4b: #6243c6; --d5a: #5536b8; --d5b: #3d2397;
+    --stars: 0;
+
+    --bg: #bdb5ff; --ink: #16133a; --ink-2: #2f2b5e; --halo: rgba(232, 226, 255, .62);
+    --label-bg: rgba(24, 18, 60, .52);
+    --menubar: rgba(255, 255, 255, .42); --menubar-ink: #15122e; --mb-hover: rgba(0, 0, 0, .1);
+    --menu-bg: rgba(248, 247, 252, .88); --menu-ink: #1d1d1f; --menu-edge: rgba(0, 0, 0, .14);
+    --widget-bg: rgba(255, 255, 255, .58); --widget-edge: rgba(255, 255, 255, .75);
+    --dock-bg: rgba(255, 255, 255, .4); --dock-dot: #1d1d1f;
+    --win: #f7f7fa; --bar: #efeff4; --side: #ebeaf1; --group: #ffffff;
+    --text: #1d1d1f; --text-2: #50505f; --text-3: #676675; --sep: rgba(0, 0, 0, .09); --hover: rgba(0, 0, 0, .05);
+    --l-off: #d4d3da;
+    --shadow-win: 0 0 0 .5px rgba(20, 10, 60, .16), 0 30px 80px rgba(40, 20, 110, .3), 0 8px 24px rgba(40, 20, 110, .14);
+    --key-top: #ffffff; --key-bot: #ecebf3; --key-skirt: #b9b5cf; --key-ink: #1d1d1f;
+    --glass: rgba(255, 255, 255, .26); --glass-edge: rgba(255, 255, 255, .7);
+    --tile-top: #ffffff; --tile-bot: #ebebf1; --tile-op: .97; --tile-ink: #1d1d1f; --tile-shadow: drop-shadow(0 1px 1.5px rgba(0, 0, 0, .14));
+    --hub: rgba(255, 255, 255, .45); --pill: rgba(255, 255, 255, .95); --pill-ink: #1d1d1f; --hint-ink: rgba(60, 60, 67, .72);
+    --sw-off: #dcdbe2;
+  }
+  /* ---------- Dusk (dark): same Mac, after sunset ---------- */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --sky-0: #07061c; --sky-1: #1a1450; --sky-2: #4b2a80; --sky-3: #b0507c;
+      --glow: #ff8a6a; --sun-0: #ffd2a0; --sun-1: #ff7f6e;
+      --d1a: #4a3394; --d1b: #3a2780; --d2a: #36246f; --d2b: #2a1b5e;
+      --d3a: #281a5a; --d3b: #1f144b; --d4a: #1c1245; --d4b: #150d38; --d5a: #120b30; --d5b: #0b0722;
+      --stars: 1;
+      --bg: #0b0a22; --ink: #ffffff; --ink-2: rgba(236, 233, 255, .82); --halo: transparent;
+      --label-bg: rgba(0, 0, 0, .4);
+      --menubar: rgba(14, 10, 40, .4); --menubar-ink: #ffffff; --mb-hover: rgba(255, 255, 255, .16);
+      --menu-bg: rgba(40, 37, 56, .88); --menu-ink: #f5f5f7; --menu-edge: rgba(255, 255, 255, .14);
+      --widget-bg: rgba(28, 22, 64, .52); --widget-edge: rgba(255, 255, 255, .15);
+      --dock-bg: rgba(40, 34, 80, .42); --dock-dot: #ffffff;
+      --win: #1f1e27; --bar: #282733; --side: #23222c; --group: #2b2a35;
+      --text: #f5f5f7; --text-2: #b6b5c4; --text-3: #9d9cad; --sep: rgba(255, 255, 255, .09); --hover: rgba(255, 255, 255, .06);
+      --l-off: #4a4955;
+      --shadow-win: 0 0 0 .5px rgba(255, 255, 255, .12), 0 30px 90px rgba(0, 0, 0, .55), 0 8px 24px rgba(0, 0, 0, .3);
+      --key-top: #3d3c48; --key-bot: #2b2a34; --key-skirt: #121118; --key-ink: #f5f5f7;
+      --glass: rgba(36, 30, 80, .22); --glass-edge: rgba(255, 255, 255, .22);
+      --tile-top: #ffffff; --tile-bot: #cfcbe0; --tile-op: .15; --tile-ink: #ffffff; --tile-shadow: none;
+      --hub: rgba(255, 255, 255, .05); --pill: rgba(255, 255, 255, .13); --pill-ink: #ffffff; --hint-ink: rgba(235, 235, 245, .62);
+      --sw-off: #45444f;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --sky-0: #07061c; --sky-1: #1a1450; --sky-2: #4b2a80; --sky-3: #b0507c;
+    --glow: #ff8a6a; --sun-0: #ffd2a0; --sun-1: #ff7f6e;
+    --d1a: #4a3394; --d1b: #3a2780; --d2a: #36246f; --d2b: #2a1b5e;
+    --d3a: #281a5a; --d3b: #1f144b; --d4a: #1c1245; --d4b: #150d38; --d5a: #120b30; --d5b: #0b0722;
+    --stars: 1;
+    --bg: #0b0a22; --ink: #ffffff; --ink-2: rgba(236, 233, 255, .82); --halo: transparent;
+    --label-bg: rgba(0, 0, 0, .4);
+    --menubar: rgba(14, 10, 40, .4); --menubar-ink: #ffffff; --mb-hover: rgba(255, 255, 255, .16);
+    --menu-bg: rgba(40, 37, 56, .88); --menu-ink: #f5f5f7; --menu-edge: rgba(255, 255, 255, .14);
+    --widget-bg: rgba(28, 22, 64, .52); --widget-edge: rgba(255, 255, 255, .15);
+    --dock-bg: rgba(40, 34, 80, .42); --dock-dot: #ffffff;
+    --win: #1f1e27; --bar: #282733; --side: #23222c; --group: #2b2a35;
+    --text: #f5f5f7; --text-2: #b6b5c4; --text-3: #9d9cad; --sep: rgba(255, 255, 255, .09); --hover: rgba(255, 255, 255, .06);
+    --l-off: #4a4955;
+    --shadow-win: 0 0 0 .5px rgba(255, 255, 255, .12), 0 30px 90px rgba(0, 0, 0, .55), 0 8px 24px rgba(0, 0, 0, .3);
+    --key-top: #3d3c48; --key-bot: #2b2a34; --key-skirt: #121118; --key-ink: #f5f5f7;
+    --glass: rgba(36, 30, 80, .22); --glass-edge: rgba(255, 255, 255, .22);
+    --tile-top: #ffffff; --tile-bot: #cfcbe0; --tile-op: .15; --tile-ink: #ffffff; --tile-shadow: none;
+    --hub: rgba(255, 255, 255, .05); --pill: rgba(255, 255, 255, .13); --pill-ink: #ffffff; --hint-ink: rgba(235, 235, 245, .62);
+    --sw-off: #45444f;
+  }
+
+  /* ---------- Base ---------- */
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; }
+  [hidden] { display: none !important; }
+  html { scroll-padding: 36px 0 96px; -webkit-text-size-adjust: 100%; }
+  body { min-height: 100vh; background: var(--bg); color: var(--ink); font: 16px/1.55 var(--f-text); -webkit-font-smoothing: antialiased; overflow-x: hidden; overflow-x: clip; padding-bottom: 110px; }
+  a { color: inherit; }
+  button { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .skip { position: fixed; left: 12px; top: -60px; z-index: 100; padding: 8px 14px; border-radius: 10px; background: var(--sel); color: #fff; text-decoration: none; font-weight: 600; }
+  .skip:focus { top: 36px; }
+
+  /* ---------- Wallpaper ---------- */
+  .wallpaper { position: fixed; left: 0; top: 0; width: 100%; height: 100vh; height: 100lvh; z-index: -1; overflow: hidden; pointer-events: none; }
+  .wallpaper > svg { width: 100%; height: 100%; display: block; }
+  .grain { position: absolute; inset: 0; opacity: .07; mix-blend-mode: overlay; background-size: 160px; }
+  #stars { opacity: var(--stars); }
+  .w-s0 { stop-color: var(--sky-0); } .w-s1 { stop-color: var(--sky-1); } .w-s2 { stop-color: var(--sky-2); } .w-s3 { stop-color: var(--sky-3); }
+  .w-g { stop-color: var(--glow); } .w-u0 { stop-color: var(--sun-0); } .w-u1 { stop-color: var(--sun-1); }
+  .w-1a { stop-color: var(--d1a); } .w-1b { stop-color: var(--d1b); } .w-2a { stop-color: var(--d2a); } .w-2b { stop-color: var(--d2b); }
+  .w-3a { stop-color: var(--d3a); } .w-3b { stop-color: var(--d3b); } .w-4a { stop-color: var(--d4a); } .w-4b { stop-color: var(--d4b); }
+  .w-5a { stop-color: var(--d5a); } .w-5b { stop-color: var(--d5b); }
+
+  /* ---------- Menu bar ---------- */
+  .menubar { position: fixed; top: 0; left: 0; right: 0; z-index: 60; height: 28px; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 0 8px; font-size: 13px; font-weight: 500; color: var(--menubar-ink);
+    background: var(--menubar); -webkit-backdrop-filter: blur(28px) saturate(1.8); backdrop-filter: blur(28px) saturate(1.8); }
+  .mb-left, .mb-right { display: flex; align-items: center; height: 100%; gap: 1px; min-width: 0; }
+  .mb-app { font-weight: 700; padding: 0 9px; white-space: nowrap; }
+  .mb-item { height: 22px; padding: 0 9px; border: 0; border-radius: 6px; background: none; color: inherit; cursor: pointer; display: flex; align-items: center; gap: 6px; text-decoration: none; white-space: nowrap; }
+  .mb-item:hover, .mb-item[aria-current="page"] { background: var(--mb-hover); }
+  .mb-item img { width: 16px; height: 16px; }
+  .mb-icon { padding: 0 7px; }
+  .mb-icon svg { width: 16px; height: 16px; display: block; }
+  .mb-clock { padding: 0 6px 0 8px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+  /* ---------- The System Settings window ---------- */
+  .page { padding: calc(28px + clamp(28px, 7vh, 80px)) var(--gutter) 0; }
+  .win { position: relative; max-width: 940px; margin: 0 auto; border-radius: 22px; overflow: hidden; color: var(--text); background: var(--win); box-shadow: var(--shadow-win); }
+  .js .win { animation: rise .8s cubic-bezier(.2, .8, .2, 1) backwards; }
+  @keyframes rise { from { opacity: 0; transform: translateY(40px) scale(.98); } }
+  .bar { display: flex; align-items: center; gap: 14px; height: 52px; padding: 0 18px; background: var(--bar); border-bottom: 1px solid var(--sep); }
+  .lights { display: flex; gap: 8px; flex: none; }
+  .lights i { display: block; width: 12px; height: 12px; border-radius: 50%; box-shadow: inset 0 0 0 .5px rgba(0, 0, 0, .18); }
+  .lights i:nth-child(1) { background: #ff5f57; } .lights i:nth-child(2) { background: #febc2e; } .lights i:nth-child(3) { background: #28c840; }
+  .chevs { display: flex; gap: 4px; color: var(--text-3); flex: none; }
+  .chevs svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .bar-title { font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+
+  .settings { display: grid; grid-template-columns: 220px minmax(0, 1fr); }
+  .s-side { padding: 12px 10px; background: var(--side); border-right: 1px solid var(--sep); }
+  .s-search { display: flex; align-items: center; gap: 6px; height: 30px; margin-bottom: 10px; padding: 0 10px; border-radius: 8px; font-size: 13px; color: var(--text-3); background: var(--hover); }
+  .s-search svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
+  .s-side a { display: flex; align-items: center; gap: 9px; height: 32px; padding: 0 8px; border-radius: 8px; font-size: 14px; text-decoration: none; color: var(--text); }
+  .s-side a:hover { background: var(--hover); }
+  .s-side a[aria-current="page"] { background: var(--sel); color: #fff; }
+  .sq { display: grid; place-items: center; flex: none; width: 24px; height: 24px; border-radius: 7px; color: #fff; background: var(--c, #8e8e93); box-shadow: inset 0 0 0 .5px rgba(0, 0, 0, .12); }
+  .sq svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .sq img { width: 24px; height: 24px; display: block; }
+  .sq.app { background: none; box-shadow: none; }
+
+  .s-main { display: flex; flex-direction: column; gap: 24px; min-width: 0; padding: 8px clamp(16px, 3vw, 34px) 30px; }
+  .head { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; column-gap: 16px; padding: 22px 4px 0; }
+  .head .sq { width: 56px; height: 56px; border-radius: 15px; grid-row: span 2; background: linear-gradient(#3b9bff, #0a6be0); }
+  .head .sq svg { width: 30px; height: 30px; stroke-width: 1.8; }
+  h1 { font-size: clamp(26px, 3.4vw, 36px); line-height: 1.1; letter-spacing: -.028em; font-weight: 700; text-wrap: balance; }
+  .sub { margin-top: 6px; font-size: clamp(15px, 1.4vw, 17px); color: var(--text-2); }
+  .group-h { margin: 0 4px 8px; font-size: 13px; font-weight: 700; color: var(--text-2); }
+  .group { list-style: none; padding: 0; border-radius: 12px; background: var(--group); box-shadow: 0 0 0 1px var(--sep); }
+  .srow { display: flex; align-items: center; gap: 12px; padding: 13px 14px; }
+  .srow + .srow { border-top: 1px solid var(--sep); }
+  .srow > div { min-width: 0; flex: 1; }
+  .srow-t { font-size: 14.5px; font-weight: 650; line-height: 1.35; }
+  .srow-d { margin-top: 2px; font-size: 13.5px; line-height: 1.45; color: var(--text-2); }
+  .mbtn { display: inline-flex; align-items: center; justify-content: center; flex: none; height: 32px; padding: 0 16px; border: 0; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; white-space: nowrap; cursor: pointer;
+    color: var(--text); background: var(--win); box-shadow: 0 0 0 1px var(--sep), 0 1px 2px rgba(0, 0, 0, .08); }
+  .mbtn:hover { background: var(--hover); }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; padding: 4px 4px 0; }
+  .btn { display: inline-flex; align-items: center; gap: 9px; height: 46px; padding: 0 22px; border-radius: 999px; font-weight: 600; font-size: 15.5px; text-decoration: none; white-space: nowrap; transition: transform .15s, box-shadow .2s; }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .btn.primary { color: #fff; background: linear-gradient(110deg, var(--iris), var(--orchid)); box-shadow: 0 10px 30px rgba(90, 60, 230, .35), inset 0 1px 0 rgba(255, 255, 255, .3); }
+  .btn.primary:hover { transform: translateY(-1px); }
+  .btn.ghost { color: var(--text); background: var(--group); box-shadow: inset 0 0 0 1px var(--sep); }
+  .btn.ghost:hover { transform: translateY(-1px); }
+
+  /* ---------- Footer ---------- */
+  .foot-wrap { padding: 0 var(--gutter); }
+  .foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 20px; max-width: 940px; margin: clamp(40px, 8vh, 80px) auto 0; padding: 12px 18px;
+    border-radius: 14px; font-size: 13px; color: var(--ink); background: var(--widget-bg); -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px); box-shadow: inset 0 0 0 1px var(--widget-edge); }
+  .foot-brand { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+  .foot-brand img { width: 18px; height: 18px; }
+  .foot-links { display: inline-flex; flex-wrap: wrap; gap: 6px 18px; }
+
+  /* ---------- Dock ---------- */
+  .dock { position: fixed; left: 50%; bottom: 10px; z-index: 50; display: flex; align-items: flex-end; gap: 10px; padding: 8px 10px; transform: translateX(-50%); transition: transform .35s cubic-bezier(.3, 1.2, .4, 1); }
+  .dock.tuck { transform: translate(-50%, calc(100% + 24px)); }
+  .dock.tuck:focus-within { transform: translateX(-50%); }
+  .dock::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 22px; background: var(--dock-bg); -webkit-backdrop-filter: blur(24px) saturate(1.8); backdrop-filter: blur(24px) saturate(1.8);
+    box-shadow: inset 0 0 0 .5px rgba(255, 255, 255, .45), 0 10px 30px rgba(0, 0, 0, .22); transform: scaleX(var(--grow, 1)); transition: transform .12s ease-out; }
+  .dk { position: relative; display: block; flex: none; width: 50px; height: 50px; border-radius: 12px; text-decoration: none; transform: translateX(var(--tx, 0px)); transition: transform .12s ease-out; -webkit-tap-highlight-color: transparent; }
+  .dk-ic { display: block; width: 100%; height: 100%; transform-origin: 50% 100%; transform: scale(var(--s, 1)); transition: transform .12s ease-out; }
+  .dk-b { display: block; width: 100%; height: 100%; }
+  .dk-b svg { width: 100%; height: 100%; display: block; filter: drop-shadow(0 3px 5px rgba(10, 6, 40, .25)); }
+  .dk-tip { position: absolute; bottom: calc(100% + 12px); left: 50%; padding: 3px 10px; border-radius: 7px; font-size: 13px; font-weight: 500; white-space: nowrap; pointer-events: none; opacity: 0;
+    color: var(--menu-ink); background: var(--menu-bg); box-shadow: 0 0 0 .5px var(--menu-edge), 0 4px 12px rgba(0, 0, 0, .2); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+    transform: translate(-50%, calc(var(--lift, 0) * -1px)); transition: opacity .12s; }
+  .dk:hover .dk-tip, .dk:focus-visible .dk-tip { opacity: 1; }
+  .dk.on::after { content: ""; position: absolute; left: 50%; bottom: -6px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--dock-dot); }
+  .dk-sep { flex: none; align-self: stretch; width: 1px; margin: 2px 2px; background: rgba(127, 127, 140, .45); transform: translateX(var(--tx, 0px)); transition: transform .12s ease-out; }
+
+  /* Phones and tablets: a Mac-style alert instead of a Mac download */
+  .mac-only { width: min(100% - 32px, 290px); margin: auto; padding: 0; border: 0; border-radius: 18px; text-align: center; color: var(--menu-ink); background: var(--menu-bg);
+    -webkit-backdrop-filter: blur(30px) saturate(1.8); backdrop-filter: blur(30px) saturate(1.8); box-shadow: 0 0 0 .5px var(--menu-edge), 0 24px 60px rgba(0, 0, 0, .4); }
+  .mac-only[open] { animation: sheetIn .28s cubic-bezier(.3, 1.2, .4, 1); }
+  .mac-only::backdrop { background: rgba(10, 8, 30, .35); }
+  @keyframes sheetIn { from { opacity: 0; transform: translateY(-16px) scale(.97); } }
+  .mo { display: flex; flex-direction: column; gap: 8px; padding: 22px 18px 16px; }
+  .mo img { width: 64px; height: 64px; margin: 0 auto 4px; }
+  .mo h2 { font-size: 17px; line-height: 1.3; letter-spacing: -.01em; }
+  .mo p { margin-bottom: 8px; font-size: 14px; line-height: 1.45; opacity: .85; }
+  .mo button { height: 38px; border: 0; border-radius: 10px; font-size: 15px; font-weight: 500; color: inherit; background: var(--hover); box-shadow: inset 0 0 0 .5px var(--menu-edge); cursor: pointer; }
+  .mo button.pri { color: #fff; background: var(--sel); box-shadow: none; }
+  .mo a { margin-top: 4px; font-size: 13px; opacity: .75; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 759px) {
+    .settings { grid-template-columns: minmax(0, 1fr); }
+    .s-side { display: none; }
+    .srow { flex-wrap: wrap; }
+    .srow > div { flex: 1 1 180px; }
+    .srow .mbtn { margin-left: 36px; }
+    .dk { width: 44px; height: 44px; }
+    .dock { gap: 8px; padding: 7px 9px; }
+    .dk:last-child .dk-tip { left: auto; right: -6px; transform: translateY(calc(var(--lift, 0) * -1px)); }
+  }
+  @media (max-width: 599px) {
+    .mb-date, .mb-hide-sm { display: none; }
+    .bar { padding: 0 14px; gap: 10px; }
+    .chevs { display: none; }
+    .head { column-gap: 12px; padding-top: 18px; }
+    .head .sq { width: 44px; height: 44px; border-radius: 12px; }
+    .head .sq svg { width: 24px; height: 24px; }
+    .actions .btn { flex: 1 1 100%; justify-content: center; }
+  }
+  @media (max-width: 400px) {
+    .dk { width: 38px; height: 38px; }
+    .dock { gap: 6px; padding: 6px 8px; }
+  }
+  @media (max-width: 359px) {
+    .dk { width: 34px; height: 34px; }
+    .dock { gap: 5px; padding: 6px 7px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+  .after-dl { width: min(100% - 32px, 360px); }
+  .ad-steps { margin: 2px 0 10px; padding-left: 20px; text-align: left; font-size: 13.5px; line-height: 1.45; }
+  .ad-steps li + li { margin-top: 7px; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Shared paints for icons. Kept rendered (0×0) so gradient references work everywhere. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gTry" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a6bff"/><stop offset="1" stop-color="#b44cf2"/></linearGradient>
+    <linearGradient id="gFmt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb35c"/><stop offset="1" stop-color="#ff5e7e"/></linearGradient>
+    <linearGradient id="gLock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a2a2ae"/><stop offset="1" stop-color="#5c5c68"/></linearGradient>
+    <linearGradient id="gInst" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#42e09c"/><stop offset="1" stop-color="#169a5a"/></linearGradient>
+    <linearGradient id="gSrc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a44"/><stop offset="1" stop-color="#121217"/></linearGradient>
+    <linearGradient id="gFold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0ff"/><stop offset="1" stop-color="#4aa3f2"/></linearGradient>
+    <linearGradient id="gFoldB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5aa7ee"/><stop offset="1" stop-color="#2f80d8"/></linearGradient>
+    <linearGradient id="gPhoto" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb86c"/><stop offset="1" stop-color="#ff6f91"/></linearGradient>
+    <linearGradient id="gVid" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#59b6ff"/><stop offset="1" stop-color="#3a5bff"/></linearGradient>
+  </defs>
+</svg>
+
+<!-- The wallpaper: a dynamic desktop. Day in light appearance, dusk in dark. -->
+<div class="wallpaper" aria-hidden="true">
+  <svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" focusable="false">
+    <defs>
+      <linearGradient id="wSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="w-s0"/><stop offset=".42" class="w-s1"/><stop offset=".64" class="w-s2"/><stop offset=".78" class="w-s3"/></linearGradient>
+      <radialGradient id="wGlow" cx="1150" cy="690" r="560" gradientUnits="userSpaceOnUse"><stop offset="0" class="w-g" stop-opacity=".9"/><stop offset="1" class="w-g" stop-opacity="0"/></radialGradient>
+      <linearGradient id="wSun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="w-u0"/><stop offset="1" class="w-u1"/></linearGradient>
+      <linearGradient id="wD1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="w-1a"/><stop offset="1" class="w-1b"/></linearGradient>
+      <linearGradient id="wD2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="w-2a"/><stop offset="1" class="w-2b"/></linearGradient>
+      <linearGradient id="wD3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="w-3a"/><stop offset="1" class="w-3b"/></linearGradient>
+      <linearGradient id="wD4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="w-4a"/><stop offset="1" class="w-4b"/></linearGradient>
+      <linearGradient id="wD5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="w-5a"/><stop offset="1" class="w-5b"/></linearGradient>
+    </defs>
+    <g id="wpArt">
+      <rect width="1600" height="1000" fill="url(#wSky)"/>
+      <g id="stars" fill="#fff"></g>
+      <rect width="1600" height="1000" fill="url(#wGlow)"/>
+      <circle cx="1150" cy="684" r="104" fill="url(#wSun)"/>
+      <path fill="url(#wD1)" d="M0 668C180 628 340 612 520 640C700 668 860 700 1040 676C1220 652 1400 610 1600 640V1000H0Z"/>
+      <path fill="url(#wD2)" d="M0 742C220 700 420 708 640 742C860 776 1060 760 1260 728C1420 704 1520 712 1600 724V1000H0Z"/>
+      <path fill="url(#wD3)" d="M0 808C260 768 520 790 780 818C1040 846 1260 812 1600 790V1000H0Z"/>
+      <path fill="url(#wD4)" d="M0 872C300 840 560 860 860 892C1120 918 1380 884 1600 866V1000H0Z"/>
+      <path fill="url(#wD5)" d="M0 948C340 912 720 960 1080 944C1320 934 1480 918 1600 930V1000H0Z"/>
+    </g>
+  </svg>
+  <div class="grain"></div>
+</div>
+
+<header class="menubar">
+  <nav class="mb-left" aria-label="Menu bar">
+    <span class="mb-app mb-hide-sm">System Settings</span>
+    <a class="mb-item" href="index.html"><img src="icon.png" alt="" width="16" height="16">Shiftvert</a>
+    <a class="mb-item" href="privacy.html" aria-current="page"><span>Privacy<span class="mb-hide-sm"> &amp; Security</span></span></a>
+  </nav>
+  <div class="mb-right">
+    <button class="mb-item mb-icon" id="theme" type="button" aria-label="Switch appearance">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+    </button>
+    <span class="mb-clock" aria-hidden="true"><span class="mb-date" id="cDate"></span> <span id="cTime"></span></span>
+  </div>
+</header>
+
+<main id="main" class="page">
+  <div class="win" role="region" aria-labelledby="privacy-h">
+    <div class="bar">
+      <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="chevs" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.5 6l-6 6 6 6"/></svg><svg viewBox="0 0 24 24"><path d="M9.5 6l6 6-6 6"/></svg></span>
+      <span class="bar-title">Privacy &amp; Security</span>
+    </div>
+    <div class="settings">
+      <nav class="s-side" aria-label="Shiftvert pages">
+        <div class="s-search" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20"/></svg>Search</div>
+        <a href="index.html"><span class="sq app"><img src="icon.png" alt="" width="24" height="24"></span>Shiftvert</a>
+        <a href="index.html#install"><span class="sq" style="--c:#30b158"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5l4.5 4.5 4.5-4.5M5 20h14"/></svg></span>Install</a>
+        <a href="privacy.html" aria-current="page"><span class="sq" style="--c:#0a84ff"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/></svg></span>Privacy &amp; Security</a>
+      </nav>
+
+      <div class="s-main">
+        <header class="head">
+          <span class="sq" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <h1 id="privacy-h">Your files never leave your Mac.</h1>
+          <p class="sub">No uploads, no accounts, no tracking.</p>
+        </header>
+
+        <section aria-labelledby="g-app">
+          <h2 class="group-h" id="g-app">The Shiftvert app</h2>
+          <ul class="group">
+            <li class="srow"><span class="sq" style="--c:#0a84ff"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.5 3.4 5.3 3.4 8.5s-1 6-3.4 8.5c-2.4-2.5-3.4-5.3-3.4-8.5s1-6 3.4-8.5z"/></svg></span>
+              <div><h3 class="srow-t">No network code</h3><p class="srow-d">There's no networking code at all, so nothing is uploaded and there's no account to make.</p></div></li>
+            <li class="srow"><span class="sq" style="--c:#ff9f0a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"/></svg></span>
+              <div><h3 class="srow-t">Only the files you give it</h3><p class="srow-d">It reads just the files you drop or pick, and saves results as new files, so originals are never overwritten.</p></div></li>
+            <li class="srow"><span class="sq" style="--c:#8e8e93"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/></svg></span>
+              <div><h3 class="srow-t">Minimal permissions</h3><p class="srow-d">It doesn't need Accessibility or Full Disk Access. macOS may ask once to let it use your Desktop, Documents or Downloads folder, so it can save results next to your files.</p></div></li>
+            <li class="srow"><span class="sq" style="--c:#5e5ce6"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7zM10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg></span>
+              <div><h3 class="srow-t">Only Apple's built-in tools</h3><p class="srow-d">Conversions use macOS's own frameworks and tools, with no third-party code.</p></div></li>
+            <li class="srow"><span class="sq" style="--c:#ff375f"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6-7-11.5a7 7 0 0 1 11.6-5.3M18.6 7.6c.3.6.4 1.2.4 1.9 0 2.6-1.6 5.1-3.4 7.1M3 3l18 18"/></svg></span>
+              <div><h3 class="srow-t">Strips hidden details</h3><p class="srow-d">Zip leaves out “downloaded from” info, and Strip EXIF removes a photo's location and camera data.</p></div></li>
+            <li class="srow"><span class="sq" style="--c:#30b158"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></span>
+              <div><h3 class="srow-t">Open source</h3><p class="srow-d">It's MIT licensed, so you can read every line on GitHub. Each <a data-releases href="https://github.com/roiegold/shiftvert/releases/latest">release</a> lists the SHA-256 checksum of Shiftvert.zip, so you can check your download is the real one.</p></div>
+              <a class="mbtn" data-repo href="https://github.com/roiegold/shiftvert">View source</a></li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="g-web">
+          <h2 class="group-h" id="g-web">This website</h2>
+          <ul class="group">
+            <li class="srow"><span class="sq" style="--c:#a550e8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"/><circle cx="12" cy="12" r="2.6"/><path d="M4 4l16 16"/></svg></span>
+              <div><h3 class="srow-t">Doesn't track you</h3><p class="srow-d">No cookies, analytics, ads or external fonts: everything on this page comes from this site. It's hosted on GitHub Pages, which keeps standard server logs, and downloads come from GitHub.</p></div></li>
+          </ul>
+        </section>
+
+        <div class="actions">
+          <a class="btn primary" data-download href="https://github.com/roiegold/shiftvert/releases/latest/download/Shiftvert.zip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download Shiftvert</a>
+          <a class="btn ghost" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Back to Shiftvert</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot-wrap">
+    <footer class="foot">
+      <span class="foot-brand"><img src="icon.png" alt="" width="18" height="18">Shiftvert · free and open source</span>
+      <span class="foot-links"><a data-repo href="https://github.com/roiegold/shiftvert">Source on GitHub</a><a data-issues href="https://github.com/roiegold/shiftvert/issues">Report an Issue</a></span>
+    </footer>
+  </div>
+</main>
+
+<!-- The Dock: page navigation -->
+<nav class="dock" id="dock" aria-label="Pages">
+  <a class="dk" href="index.html#desktop"><span class="dk-ic"><span class="dk-b"><svg viewBox="0 0 60 60" aria-hidden="true"><path d="M30 1.5C9.5 1.5 1.5 9.5 1.5 30S9.5 58.5 30 58.5 58.5 50.5 58.5 30 50.5 1.5 30 1.5z" fill="url(#gTry)"/><circle cx="30" cy="30" r="14.5" fill="none" stroke="#fff" stroke-width="8" stroke-dasharray="12.2 2.98" transform="rotate(-75 30 30)"/><circle cx="30" cy="30" r="3.4" fill="#fff" opacity=".9"/></svg></span></span><span class="dk-tip">Try it</span></a>
+  <a class="dk" href="index.html#how"><span class="dk-ic"><span class="dk-b"><svg viewBox="0 0 60 60" aria-hidden="true"><defs><linearGradient id="gHow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b9bff"/><stop offset="1" stop-color="#2d5fd8"/></linearGradient></defs><path d="M30 1.5C9.5 1.5 1.5 9.5 1.5 30S9.5 58.5 30 58.5 58.5 50.5 58.5 30 50.5 1.5 30 1.5z" fill="url(#gHow)"/><path d="M24 17l13 9-13 9z" fill="#fff" transform="translate(1 4)"/></svg></span></span><span class="dk-tip">See it in action</span></a>
+  <a class="dk" href="index.html#formats"><span class="dk-ic"><span class="dk-b"><svg viewBox="0 0 60 60" aria-hidden="true"><path d="M30 1.5C9.5 1.5 1.5 9.5 1.5 30S9.5 58.5 30 58.5 58.5 50.5 58.5 30 50.5 1.5 30 1.5z" fill="url(#gFmt)"/><path d="M19 12h15l9 9v25a2 2 0 0 1-2 2H19a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2z" fill="#fff"/><path d="M34 12v7a2 2 0 0 0 2 2h7" fill="#ffe2d6"/><rect x="20.5" y="34" width="19" height="8" rx="2.4" fill="#ff5e7e"/><text x="30" y="38.3" fill="#fff" font-size="6.2" font-weight="800" text-anchor="middle" dominant-baseline="middle" font-family="-apple-system, system-ui, sans-serif">PNG</text></svg></span></span><span class="dk-tip">What it converts</span></a>
+  <a class="dk" href="index.html#install"><span class="dk-ic"><span class="dk-b"><svg viewBox="0 0 60 60" aria-hidden="true"><path d="M30 1.5C9.5 1.5 1.5 9.5 1.5 30S9.5 58.5 30 58.5 58.5 50.5 58.5 30 50.5 1.5 30 1.5z" fill="url(#gInst)"/><path d="M30 14v20M22 26l8 8 8-8M17 36v6a3 3 0 0 0 3 3h20a3 3 0 0 0 3-3v-6" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="dk-tip">Install</span></a>
+  <a class="dk on" href="privacy.html" aria-current="page"><span class="dk-ic"><span class="dk-b"><svg viewBox="0 0 60 60" aria-hidden="true"><path d="M30 1.5C9.5 1.5 1.5 9.5 1.5 30S9.5 58.5 30 58.5 58.5 50.5 58.5 30 50.5 1.5 30 1.5z" fill="url(#gLock)"/><path d="M23 27v-4.5a7 7 0 0 1 14 0V27" fill="none" stroke="#fff" stroke-width="3.6"/><rect x="18.5" y="26.5" width="23" height="18" rx="4" fill="#fff"/><circle cx="30" cy="34.5" r="2.4" fill="#6c6c78"/></svg></span></span><span class="dk-tip">Privacy &amp; Security</span></a>
+  <span class="dk-sep" aria-hidden="true"></span>
+  <a class="dk" data-repo href="https://github.com/roiegold/shiftvert"><span class="dk-ic"><span class="dk-b"><svg viewBox="0 0 60 60" aria-hidden="true"><path d="M30 1.5C9.5 1.5 1.5 9.5 1.5 30S9.5 58.5 30 58.5 58.5 50.5 58.5 30 50.5 1.5 30 1.5z" fill="url(#gSrc)" stroke="rgba(255,255,255,.22)"/><path d="M23 21l-9 9 9 9M37 21l9 9-9 9M33 17l-6 26" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="dk-tip">Source on GitHub</span></a>
+  <a class="dk" data-download href="https://github.com/roiegold/shiftvert/releases/latest/download/Shiftvert.zip"><span class="dk-ic"><span class="dk-b"><svg viewBox="0 0 60 60" aria-hidden="true"><path d="M5 17a4 4 0 0 1 4-4h14l5 5h23a4 4 0 0 1 4 4v6H5z" fill="url(#gFoldB)"/><path d="M5 24a4 4 0 0 1 4-4h42a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z" fill="url(#gFold)"/><path d="M30 26v16M23.5 35.5L30 42l6.5-6.5" fill="none" stroke="#2c76c9" stroke-opacity=".75" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="dk-tip">Download Shiftvert</span></a>
+</nav>
+
+<!-- Phones and tablets get this instead of a Mac zip -->
+<!-- Macs: what to do once the download has started -->
+<dialog class="mac-only after-dl" id="afterDl" aria-labelledby="adT">
+  <div class="mo">
+    <img src="icon.png" alt="" width="64" height="64">
+    <h2 id="adT">Almost there</h2>
+    <ol class="ad-steps">
+      <li>Open your <b>Downloads</b> folder (in Chrome, click <b>Shiftvert.zip</b> first) and drag <b>Shiftvert</b> into <b>Applications</b>.</li>
+      <li>Double-click it there. If macOS says it couldn't check it for malware, that's expected: click <b>Done</b>.</li>
+      <li>Open <b>Apple menu → System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>.</li>
+    </ol>
+    <button class="pri" type="button" id="adClose">Got It</button>
+    <a href="index.html?step=2#install" id="adMore">Show me step by step</a>
+  </div>
+</dialog>
+
+<dialog class="mac-only" id="macOnly" aria-labelledby="moT" aria-describedby="moD">
+  <div class="mo">
+    <img src="icon.png" alt="" width="64" height="64">
+    <h2 id="moT">Shiftvert is for Mac</h2>
+    <p id="moD">Open <b id="moUrl">shiftvert.com</b> on your Mac to download it. Tip: AirDrop or send the link to yourself.</p>
+    <button class="pri" type="button" id="moSend">Share Link…</button>
+    <button type="button" id="moClose">Close</button>
+    <a data-download href="https://github.com/roiegold/shiftvert/releases/latest/download/Shiftvert.zip">Download the .zip anyway</a>
+  </div>
+</dialog>
+
+<script src="download.js"></script>
+<script src="privacy.js"></script>
+</body>
+</html>
