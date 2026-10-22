@@ -26,9 +26,11 @@ Originals are never changed or overwritten; results get names like `photo compre
 1. Download `Shiftvert.zip` from [shiftvert.com](https://shiftvert.com). Safari unzips it for you; in Chrome, click it in the downloads list.
 2. Drag **Shiftvert** from Downloads into **Applications** in the Finder sidebar, then double-click it there.
 3. macOS says Apple couldn't check it for malware (it isn't registered with Apple's paid developer program). That's expected: click **Done** (or **OK**), not Move to Trash.
-4. Open **Apple menu → System Settings → Privacy & Security**, scroll to the bottom and click **Open Anyway** next to “Shiftvert” was blocked, then confirm with Touch ID or your password. If macOS asks once more, click **Open Anyway** again. The button only shows for about an hour after you try to open the app. You do this once per download, so again after an update. You never need Terminal, `sudo` or to turn off Gatekeeper.
+4. Open **Apple menu → System Settings → Privacy & Security** (the **Open Privacy & Security** button on shiftvert.com takes you there), scroll to the bottom and click **Open Anyway** next to “Shiftvert” was blocked, then confirm with Touch ID or your password. If macOS asks once more, click **Open Anyway** again. The button only shows for about an hour after you try to open the app. You do this once per download, so again after an update. You never need Terminal, `sudo` or to turn off Gatekeeper.
 5. A welcome note explains the gesture and has an **Open Shiftvert at login** checkbox, and a ⟳ icon stays in the menu bar. If you can't see it (a crowded menu bar or the notch can hide it), open Shiftvert again and its menu appears at the pointer.
 6. Start dragging a file, then hold ⇧ Shift. The first time you convert something on the Desktop or in Documents or Downloads, macOS may ask to let Shiftvert use that folder; allow it so results can be saved next to your files.
+
+**Why the warning?** Apple only checks apps from developers in its paid Developer Program ($99 a year), and Shiftvert isn't in it. So macOS says it couldn't check the app: that means “not checked by Apple”, not “malware found”. Only click Open Anyway for apps from their real source (shiftvert.com or this repository).
 
 ### Check your download
 

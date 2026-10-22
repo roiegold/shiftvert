@@ -586,6 +586,8 @@
   .after-dl { width: min(100% - 32px, 360px); }
   .ad-steps { margin: 2px 0 10px; padding-left: 20px; text-align: left; font-size: 13.5px; line-height: 1.45; }
   .ad-steps li + li { margin-top: 7px; }
+  /* Opens System Settings at Privacy & Security (Safari asks first; an unsupported Apple link, so the steps also say the way by hand). */
+  .mo .ad-set { display: inline-block; margin: 2px 0; padding: 1px 8px; border-radius: 6px; font-size: inherit; font-weight: 600; opacity: 1; color: #fff; background: var(--sel); text-decoration: none; }
 </style>
 </head>
 <body>
@@ -856,7 +858,7 @@
             </div>
             <h3>Open it once</h3>
             <p>Double-click Shiftvert in Applications. macOS says it couldn't check Shiftvert for malware. That's normal for apps outside Apple's paid developer program: click <b>Done</b> (or <b>OK</b>), not Move to Trash.</p>
-            <p class="fine">The wording varies by macOS version.</p>
+            <p class="fine">The wording varies by macOS version. <a href="privacy.html#warning">Why does macOS say this?</a></p>
           </div>
           <div class="step">
             <div class="illus" aria-hidden="true">
@@ -873,6 +875,7 @@
             <h3>Click Open Anyway</h3>
             <p>Open <b>Apple menu → System Settings → Privacy &amp; Security</b>, scroll to the bottom and click <b>Open Anyway</b> next to “Shiftvert” was blocked. Confirm with Touch&nbsp;ID or your password; if macOS asks once more, click <b>Open Anyway</b> again.</p>
             <p class="fine">No Open Anyway button? It only shows for about an hour after you try to open the app, so double-click Shiftvert again and come back.</p>
+            <p class="act"><a class="mbtn pri" href="x-apple.systempreferences:com.apple.settings.PrivacySecurity.extension?Security">Open Privacy &amp; Security</a></p>
           </div>
           <div class="step">
             <div class="illus" aria-hidden="true">
@@ -964,7 +967,7 @@
     <ol class="ad-steps">
       <li>Open your <b>Downloads</b> folder (in Chrome, click <b>Shiftvert.zip</b> first) and drag <b>Shiftvert</b> into <b>Applications</b>.</li>
       <li>Double-click it there. If macOS says it couldn't check it for malware, that's expected: click <b>Done</b>.</li>
-      <li>Open <b>Apple menu → System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>.</li>
+      <li>Click <a class="ad-set" href="x-apple.systempreferences:com.apple.settings.PrivacySecurity.extension?Security">Open Privacy &amp; Security</a>, scroll down to <b>Security</b> and click <b>Open Anyway</b>, then confirm with Touch&nbsp;ID or your password.</li>
     </ol>
     <button class="pri" type="button" id="adClose">Got It</button>
     <a href="#install" id="adMore">Show me step by step</a>
