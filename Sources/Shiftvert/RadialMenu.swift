@@ -1,4 +1,5 @@
 import AppKit
+import os
 
 // MARK: Glass (Liquid Glass on macOS 26+, frosted blur before)
 
@@ -112,6 +113,8 @@ final class RadialPanel: NSPanel {
 
 // MARK: Wheel
 
+private let wheelLog = Logger(subsystem: "io.github.roiegold.shiftvert", category: "wheel")
+
 /// The wheel: a Liquid Glass disc holding one separate tile per option. It opens on formats; tapping ⌥ during the
 /// drag swaps to tools (compress, trim, zip…) and ⇧ swaps back. Any point outside the hub picks the tile in that
 /// direction, so targets are generous.
@@ -160,7 +163,8 @@ final class RadialView: NSView {
         self.files = files
         picked = nil
         lastFlags = NSEvent.modifierFlags.intersection([.shift, .option])
-        setMode(tools: formats.isEmpty)
+        // ⌥ already down as the wheel opens (⇧⌥ pressed together, or ⌥ first) can't be "pressed" again, so open on tools.
+        setMode(tools: formats.isEmpty || lastFlags.contains(.option) && !tools.isEmpty)
         // The disc opens like a lens while the tiles pop out right behind it: quick, so it feels instant.
         let d = Self.discRadius * 2
         disc.frame = centered(mid, d * 0.6)
@@ -188,6 +192,7 @@ final class RadialView: NSView {
     func followModifiers(_ flags: NSEvent.ModifierFlags) {
         let now = flags.intersection([.shift, .option])
         let pressed = now.subtracting(lastFlags)
+        if now != lastFlags { wheelLog.debug("keys \(now.contains(.shift) ? "⇧" : "")\(now.contains(.option) ? "⌥" : "") tools=\(self.showingTools)") }
         lastFlags = now
         if pressed.contains(.option), !showingTools, !tools.isEmpty {
             setMode(tools: true)
